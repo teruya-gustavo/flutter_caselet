@@ -1,0 +1,25 @@
+[{
+    "title": "Belt Sensor",
+    "subtitle": "Inspect main belt of oven 1, stop machine if damaged.",
+    "icon": "Icons.warning_rounded",
+    "color": "Colors.red"
+},
+{
+    "title": "Cooling Sensor",
+    "subtitle": "Inspect coolant level of Freezer 10, reset sensor.",
+    "icon": "Icons.air",
+    "color": "Colors.amber[400]"
+},
+{
+    "title": "Temperature",
+    "subtitle": "Motor 91 has reported unusual high temperature, please inspect and shut down if needed.",
+    "icon": "Icons.local_fire_department",
+    "color": "Colors.orange"
+},
+{
+    "title": "Disruption",
+    "subtitle": "Items on Belt #47 do not seem to be moving in spite of the motor being on. Please inspect and unplug if needed.",
+    "icon": "Icons.engineering",
+    "color": "Colors.red"
+}
+]

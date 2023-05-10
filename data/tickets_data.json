@@ -1,0 +1,22 @@
+[{
+    "title": "Drive Sensor Alert",
+    "id": 18973,
+    "alert_id": 46538,
+    "picture": "dummy_data/images/machine_pic_1.jpg",
+    "description": "Optical sensor lens getting fogged, schedule deep cleaning."
+},
+{
+    "title": "Parts replacement",
+    "id": 93661,
+    "alert_id": 89362,
+    "picture": "dummy_data/images/machine_pic_2.jpg",
+    "description": "Part #68B need replacement soon. Place order and schedule replacement."
+},
+{
+    "title": "Salt replacement",
+    "id": 28745,
+    "alert_id": 85739,
+    "picture": "dummy_data/images/machine_pic_3.jpg",
+    "description": "Cleaner salt below threshold, schedule refill and maintenance."
+}
+]
