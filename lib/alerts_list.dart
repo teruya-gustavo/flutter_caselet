@@ -2,6 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
+import 'package:flutter_caselet/alert_card.dart';
 import 'package:flutter_caselet/models/Alert.dart';
 
 class AlertsList extends StatefulWidget {
@@ -35,86 +38,8 @@ class AlertsListState extends State<AlertsList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...alertData
-            .map((alert) => Card(
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Icon(
-                          alert.icon,
-                          size: 50,
-                          color: alert.color,
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                alert.title,
-                                style: const TextStyle(fontSize: 20),
-                                textAlign: TextAlign.start,
-                              ),
-                            ),
-                            Flexible(
-                              child: Text(
-                                alert.subtitle,
-                                textAlign: TextAlign.start,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ))
-            .toList()
+        ...alertData.map((alert) => AlertCard(alert)).toList(),
       ],
     );
-
-    // return Column(
-    //   children: [
-    //     Card(
-    //       child: Row(
-    //         children: [
-    //           Padding(
-    //             padding: EdgeInsets.all(20),
-    //             child: Icon(
-    //               Icons.air,
-    //               size: 50,
-    //               color: Colors.red,
-    //             ),
-    //           ),
-    //           Expanded(
-    //             child: Column(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               mainAxisAlignment: MainAxisAlignment.start,
-    //               mainAxisSize: MainAxisSize.min,
-    //               children: [
-    //                 Flexible(
-    //                   child: Text(
-    //                     "Belt Sensor",
-    //                     style: TextStyle(fontSize: 20),
-    //                     textAlign: TextAlign.start,
-    //                   ),
-    //                 ),
-    //                 Flexible(
-    //                   child: Text(
-    //                     "Inspect main belt of oven 1, stop machine if damaged.",
-    //                     textAlign: TextAlign.start,
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //         ],
-    //       ),
-    //     )
-    //   ],
-    // );
   }
 }
