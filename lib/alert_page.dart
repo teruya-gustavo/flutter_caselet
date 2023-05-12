@@ -3,6 +3,8 @@ import 'package:flutter_caselet/alerts_list.dart';
 import 'package:flutter_caselet/priority_info.dart';
 
 class AlertPage extends StatefulWidget {
+  const AlertPage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _AlertPageState();
