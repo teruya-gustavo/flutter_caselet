@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_caselet/alert_page.dart';
-import 'package:flutter_caselet/priority_info.dart';
+import 'package:flutter_caselet/navigation_bar.dart' as lib;
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[AlertPage()],
         ),
       ),
+      bottomNavigationBar: const lib.NavigationBar(),
     );
   }
 }
