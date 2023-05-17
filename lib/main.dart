@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_caselet/alert_page.dart';
-import 'package:flutter_caselet/dashboard_page.dart';
+import 'package:flutter_caselet/pages/alert_page.dart';
+import 'package:flutter_caselet/pages/dashboard_page.dart';
 import 'package:flutter_caselet/navigation_bar.dart' as lib;
-import 'package:flutter_caselet/tickets_page.dart';
+import 'package:flutter_caselet/pages/tickets_page.dart';
 
 import 'navigation_bar.dart';
 
