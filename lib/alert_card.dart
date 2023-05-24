@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import 'models/Alert.dart';
+import 'models/alert.dart';
 
 class AlertCard extends StatefulWidget {
   final Alert alert;
@@ -50,6 +50,7 @@ class AlertCardState extends State<AlertCard> {
           ],
         ),
         child: Card(
+          elevation: 3,
           child: Row(
             children: [
               Padding(

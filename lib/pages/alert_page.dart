@@ -14,6 +14,6 @@ class AlertPage extends StatefulWidget {
 class _AlertPageState extends State {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [PriorityInfo(), AlertsList()]);
+    return Column(children: [PriorityInfo(), const AlertsList()]);
   }
 }

@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.green,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+        padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[pages[selectedPageIndex]],

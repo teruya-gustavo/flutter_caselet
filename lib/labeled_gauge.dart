@@ -20,7 +20,7 @@ class LabeledGauge extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.green[200],
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        width: MediaQuery.of(context).size.width * percentage,
+        width: MediaQuery.of(context).size.width * (percentage / 100),
         child: Flex(
           direction: Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +39,7 @@ class LabeledGauge extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
               child: Text(
-                "${(percentage * 100).round().toString()}%",
+                "${percentage.toInt()}%",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.green[900],

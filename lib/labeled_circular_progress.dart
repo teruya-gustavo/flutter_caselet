@@ -19,7 +19,7 @@ class LabeledCircularProgress extends StatelessWidget {
                 width: 150,
                 height: 150,
                 child: CircularProgressIndicator(
-                  value: progress,
+                  value: progress / 100,
                   backgroundColor: Colors.grey[300],
                   color: Colors.green[200],
                   strokeWidth: 30,
@@ -35,7 +35,7 @@ class LabeledCircularProgress extends StatelessWidget {
               height: 100,
             ),
             Text(
-              "${(progress * 100).round().toString()}%",
+              "${progress.toInt()}%",
               style: TextStyle(fontSize: 46, color: Colors.green[900]),
               textAlign: TextAlign.center,
             ),

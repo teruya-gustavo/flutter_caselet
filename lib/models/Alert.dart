@@ -9,8 +9,6 @@ class Alert {
   final IconData? icon;
   final Color? color;
 
-  Alert(this.title, this.subtitle, this.icon, this.color);
-
   Alert.fromJson(Map<String, dynamic> json)
       : title = json["title"],
         subtitle = json["subtitle"],

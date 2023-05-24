@@ -10,6 +10,14 @@ class TicketsPage extends StatefulWidget {
 class TicketsPageState extends State<TicketsPage> {
   @override
   Widget build(BuildContext context) {
-    return Text("Tickets Page");
+    return ExpansionPanelList(
+      children: [
+        ExpansionPanel(
+          headerBuilder: (context, booleano) => const Text("Header"),
+          body: const Text("Body"),
+          isExpanded: true,
+        ),
+      ],
+    );
   }
 }
