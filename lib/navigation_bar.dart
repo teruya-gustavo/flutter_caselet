@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_caselet/main.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NavigationBar extends StatefulWidget {
-  final Function onChangePage;
-  const NavigationBar(this.onChangePage, {super.key});
+// class NavigationBar extends StatefulWidget {
+//   final Function onChangePage;
+//   const NavigationBar(this.onChangePage, {super.key});
+
+//   @override
+//   State<NavigationBar> createState() => _NavigationBarState();
+// }
+
+class NavigationBar extends ConsumerWidget {
+  const NavigationBar({super.key});
 
   @override
-  State<NavigationBar> createState() => _NavigationBarState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    int pageIndex = ref.watch(pageIndexProvider);
 
-class _NavigationBarState extends State<NavigationBar> {
-  int _selectedIndex = 0;
-
-  @override
-  Widget build(BuildContext context) {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -28,13 +32,10 @@ class _NavigationBarState extends State<NavigationBar> {
           label: 'Tickets',
         ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: pageIndex,
       selectedItemColor: Colors.green[600] as Color,
       onTap: (int index) {
-        setState(() {
-          _selectedIndex = index;
-        });
-        widget.onChangePage(_selectedIndex);
+        ref.read(pageIndexProvider.notifier).changePage(index);
       },
     );
   }

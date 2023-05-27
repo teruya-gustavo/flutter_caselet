@@ -3,10 +3,22 @@ import 'package:flutter_caselet/pages/alert_page.dart';
 import 'package:flutter_caselet/pages/dashboard_page.dart';
 import 'package:flutter_caselet/navigation_bar.dart' as lib;
 import 'package:flutter_caselet/pages/tickets_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
+
+class PageIndexNotifier extends StateNotifier<int> {
+  PageIndexNotifier() : super(0);
+
+  void changePage(int newPage) {
+    state = newPage;
+  }
+}
+
+final pageIndexProvider =
+    StateNotifierProvider<PageIndexNotifier, int>((_) => PageIndexNotifier());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,45 +30,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Downtime Prevention App'),
+      home: const MyHomePage2('Downtime Prevention App'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
+class MyHomePage2 extends ConsumerWidget {
   final String title;
+  const MyHomePage2(this.title, {super.key});
 
+  final List<Widget> pages = const [
+    AlertPage(),
+    DashboardPage(),
+    TicketsPage(),
+  ];
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    int pageIndex = ref.watch(pageIndexProvider);
 
-class _MyHomePageState extends State<MyHomePage> {
-  int selectedPageIndex = 0;
-
-  void handlePageChange(int id) {
-    setState(() {
-      selectedPageIndex = id;
-    });
-  }
-
-  void handleNavigateToTicketPage() {
-    setState(() {
-      selectedPageIndex = 2;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    List<Widget> pages = const [
-      AlertPage(),
-      DashboardPage(),
-      TicketsPage(),
-    ];
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
         backgroundColor: Colors.green,
       ),
       body: Padding(
@@ -64,12 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Expanded(
-              child: pages[selectedPageIndex],
+              child: pages[pageIndex],
             )
           ],
         ),
       ),
-      bottomNavigationBar: lib.NavigationBar(handlePageChange),
+      bottomNavigationBar: const lib.NavigationBar(),
     );
   }
 }

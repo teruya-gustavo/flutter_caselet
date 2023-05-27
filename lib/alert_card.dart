@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_caselet/main.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import 'models/alert.dart';
@@ -15,10 +17,6 @@ class AlertCardState extends State<AlertCard> {
   bool done = false;
 
   AlertCardState();
-
-  void doNothing(BuildContext context) {
-    throw UnimplementedError();
-  }
 
   void changeDoneState(BuildContext context) {
     setState(() {
@@ -41,13 +39,7 @@ class AlertCardState extends State<AlertCard> {
               icon: done == true ? Icons.check : Icons.square_outlined,
               label: 'Done',
             ),
-            SlidableAction(
-              onPressed: doNothing,
-              backgroundColor: Colors.lightGreen[600] as Color,
-              foregroundColor: Colors.white,
-              icon: Icons.add,
-              label: 'Ticket',
-            ),
+            const CreateTicketButton(),
           ],
         ),
         child: Card(
@@ -87,5 +79,24 @@ class AlertCardState extends State<AlertCard> {
             ],
           ),
         ));
+  }
+}
+
+class CreateTicketButton extends ConsumerWidget {
+  const CreateTicketButton({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    void doNothing(BuildContext context) {
+      ref.read(pageIndexProvider.notifier).changePage(2);
+    }
+
+    return SlidableAction(
+      onPressed: doNothing,
+      backgroundColor: Colors.lightGreen[600] as Color,
+      foregroundColor: Colors.white,
+      icon: Icons.add,
+      label: 'Ticket',
+    );
   }
 }
