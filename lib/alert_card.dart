@@ -14,8 +14,9 @@ class AlertCard extends StatefulWidget {
 class AlertCardState extends State<AlertCard> {
   bool done = false;
 
+  AlertCardState();
+
   void doNothing(BuildContext context) {
-    //TODO: create ticket route and make this function navigate to it.
     throw UnimplementedError();
   }
 

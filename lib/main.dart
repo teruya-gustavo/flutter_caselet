@@ -4,8 +4,6 @@ import 'package:flutter_caselet/pages/dashboard_page.dart';
 import 'package:flutter_caselet/navigation_bar.dart' as lib;
 import 'package:flutter_caselet/pages/tickets_page.dart';
 
-import 'navigation_bar.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -43,14 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<Widget> pages = [
-    const AlertPage(),
-    const DashboardPage(),
-    const TicketsPage()
-  ];
+  void handleNavigateToTicketPage() {
+    setState(() {
+      selectedPageIndex = 2;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = const [
+      AlertPage(),
+      DashboardPage(),
+      TicketsPage(),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -59,8 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[pages[selectedPageIndex]],
+          children: [
+            Expanded(
+              child: pages[selectedPageIndex],
+            )
+          ],
         ),
       ),
       bottomNavigationBar: lib.NavigationBar(handlePageChange),

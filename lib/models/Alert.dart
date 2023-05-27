@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/ColorMapper.dart';
-import '../utils/IconMapper.dart';
+import '../utils/color_mapper.dart';
+import '../utils/icon_mapper.dart';
 
 class Alert {
   final String title;

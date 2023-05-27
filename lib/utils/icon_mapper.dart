@@ -18,6 +18,6 @@ class IconMapper {
       return Icons.engineering;
     }
 
-    return Icons.abc;
+    return Icons.ac_unit;
   }
 }

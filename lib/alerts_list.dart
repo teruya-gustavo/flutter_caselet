@@ -39,7 +39,11 @@ class AlertsListState extends State<AlertsList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...alertData.map((alert) => AlertCard(alert)).toList(),
+        ...alertData
+            .map(
+              (alert) => AlertCard(alert),
+            )
+            .toList(),
       ],
     );
   }

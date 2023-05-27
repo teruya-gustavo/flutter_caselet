@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_caselet/change_downtime_card.dart';
 import 'package:flutter_caselet/machine_summary_card.dart';
 import 'package:flutter_caselet/models/machine_summary.dart';
 
@@ -40,9 +41,9 @@ class DashboardPageState extends State<DashboardPage> {
     });
   }
 
-  void doNothing(String? machineName) {
-    var machineData =
-        dashboardData.firstWhere((element) => element.name == machineName);
+  void handleSelectedMachine(String? selectedMachineName) {
+    var machineData = dashboardData
+        .firstWhere((element) => element.name == selectedMachineName);
     setState(() {
       selectedMachineData = machineData;
     });
@@ -50,31 +51,50 @@ class DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(dashboardData);
-    return Column(
-      children: [
-        DropdownButton(
-            value: selectedMachineData?.name,
-            icon: const Icon(Icons.arrow_downward),
-            elevation: 16,
-            style: const TextStyle(color: Colors.green),
-            underline: Container(
-              height: 1,
-              color: Colors.green,
-            ),
-            items: dashboardData.map<DropdownMenuItem<String>>((x) {
-              return DropdownMenuItem(
-                value: x.name,
+    return SingleChildScrollView(
+      controller: ScrollController(),
+      scrollDirection: Axis.vertical,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
                 child: Text(
-                  x.name,
-                  style: const TextStyle(fontSize: 20),
+                  "Select a machine",
+                  style: TextStyle(fontSize: 20),
                 ),
-              );
-            }).toList(),
-            onChanged: doNothing),
-        if (selectedMachineData != null)
-          MachineSummaryCard(selectedMachineData as MachineSummary),
-      ],
+              ),
+              DropdownButton(
+                value: selectedMachineData?.name,
+                icon: const Icon(Icons.arrow_downward),
+                elevation: 16,
+                style: const TextStyle(color: Colors.green),
+                underline: Container(
+                  height: 1,
+                  color: Colors.green,
+                ),
+                items: dashboardData.map<DropdownMenuItem<String>>(
+                  (machineData) {
+                    return DropdownMenuItem(
+                      value: machineData.name,
+                      child: Text(
+                        machineData.name,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    );
+                  },
+                ).toList(),
+                onChanged: handleSelectedMachine,
+              ),
+            ],
+          ),
+          if (selectedMachineData != null)
+            MachineSummaryCard(selectedMachineData!),
+          if (selectedMachineData != null)
+            ChanceDowntimeCard(selectedMachineData!.downtimeChance),
+        ],
+      ),
     );
   }
 }

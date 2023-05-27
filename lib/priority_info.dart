@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class PriorityInfo extends StatelessWidget {
+  const PriorityInfo({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         Text(
           'Priority:',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
