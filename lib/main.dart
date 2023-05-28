@@ -5,20 +5,11 @@ import 'package:flutter_caselet/navigation_bar.dart' as lib;
 import 'package:flutter_caselet/pages/tickets_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'providers/page_index_provider.dart';
+
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
-
-class PageIndexNotifier extends StateNotifier<int> {
-  PageIndexNotifier() : super(0);
-
-  void changePage(int newPage) {
-    state = newPage;
-  }
-}
-
-final pageIndexProvider =
-    StateNotifierProvider<PageIndexNotifier, int>((_) => PageIndexNotifier());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
