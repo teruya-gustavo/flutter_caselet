@@ -3,14 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'providers/page_index_provider.dart';
 
-// class NavigationBar extends StatefulWidget {
-//   final Function onChangePage;
-//   const NavigationBar(this.onChangePage, {super.key});
-
-//   @override
-//   State<NavigationBar> createState() => _NavigationBarState();
-// }
-
 class NavigationBar extends ConsumerWidget {
   const NavigationBar({super.key});
 
