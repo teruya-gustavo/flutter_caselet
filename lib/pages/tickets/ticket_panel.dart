@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'models/ticket.dart';
+import '../../models/ticket.dart';
 
 class TicketExpansionItem {
   final Ticket ticket;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_caselet/pages/alert_page.dart';
-import 'package:flutter_caselet/pages/dashboard_page.dart';
+import 'package:flutter_caselet/pages/alert/alert_page.dart';
+import 'package:flutter_caselet/pages/dashboard/dashboard_page.dart';
 import 'package:flutter_caselet/navigation_bar.dart' as lib;
-import 'package:flutter_caselet/pages/tickets_page.dart';
+import 'package:flutter_caselet/pages/tickets/tickets_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'providers/page_index_provider.dart';

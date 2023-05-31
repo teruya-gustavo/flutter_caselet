@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_caselet/alerts_list.dart';
-import 'package:flutter_caselet/priority_info.dart';
+import 'package:flutter_caselet/pages/alert/alerts_list.dart';
+import 'package:flutter_caselet/pages/alert/priority_info.dart';
 
 class AlertPage extends StatelessWidget {
   const AlertPage({super.key});

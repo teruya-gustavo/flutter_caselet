@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_caselet/change_downtime_card.dart';
-import 'package:flutter_caselet/machine_summary_card.dart';
+import 'package:flutter_caselet/pages/dashboard/chance_downtime_card.dart';
+import 'package:flutter_caselet/pages/dashboard/machine_summary_card.dart';
 import 'package:flutter_caselet/models/machine_summary.dart';
 
 class DashboardPage extends StatefulWidget {

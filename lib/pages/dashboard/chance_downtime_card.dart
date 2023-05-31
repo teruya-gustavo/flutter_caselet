@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_caselet/downtime_meter.dart';
-import 'package:flutter_caselet/labeled_box.dart';
+import 'package:flutter_caselet/pages/dashboard/downtime_meter.dart';
+import 'package:flutter_caselet/pages/dashboard/labeled_box.dart';
 
 class ChanceDowntimeCard extends StatelessWidget {
   final double chanceDowntime;

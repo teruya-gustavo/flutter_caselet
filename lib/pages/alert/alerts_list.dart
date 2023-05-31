@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_caselet/alert_card.dart';
 import 'package:flutter_caselet/models/alert.dart';
+import 'package:flutter_caselet/pages/alert/alert_card.dart';
 
 class AlertsList extends StatefulWidget {
   const AlertsList({super.key});

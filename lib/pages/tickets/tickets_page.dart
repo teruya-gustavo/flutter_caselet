@@ -2,10 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_caselet/ticket_form.dart';
-import 'package:flutter_caselet/ticket_panel.dart';
-
-import '../models/ticket.dart';
+import 'package:flutter_caselet/models/ticket.dart';
+import 'package:flutter_caselet/pages/tickets/ticket_form.dart';
+import 'package:flutter_caselet/pages/tickets/ticket_panel.dart';
 
 class TicketsPage extends StatefulWidget {
   const TicketsPage({super.key});

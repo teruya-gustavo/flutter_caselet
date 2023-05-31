@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'labeled_circular_progress.dart';
-import 'labeled_gauge.dart';
-import 'models/machine_summary.dart';
+import 'package:flutter_caselet/pages/dashboard/labeled_circular_progress.dart';
+import 'package:flutter_caselet/pages/dashboard/labeled_gauge.dart';
+import 'package:flutter_caselet/models/machine_summary.dart';
 
 class MachineSummaryCard extends StatelessWidget {
   final MachineSummary machineSummary;

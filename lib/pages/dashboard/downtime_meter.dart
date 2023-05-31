@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_caselet/downtime_meter_gauge_placeholder.dart';
+import 'package:flutter_caselet/pages/dashboard/downtime_meter_gauge_placeholder.dart';
 
 class DowntimeMeter extends StatelessWidget {
   final double chanceDowntime;
